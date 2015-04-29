@@ -1,0 +1,9 @@
+<!doctype html>
+<html>
+    <head>
+        <title> @@<span class="p">model.title</span> </title>
+    </head>
+    <body>
+        @@ <span class="p">html.block("body") </span>
+    </body>
+</html>

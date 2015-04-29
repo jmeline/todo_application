@@ -1,9 +1,9 @@
 <!doctype html>
 <html>
     <head>
-        <title> @@<span class="p">model.title</span> </title>
+        <title>@model.title</title>
     </head>
     <body>
-        @@ <span class="p">html.block("body") </span>
+        <span class="p">@model.body </span>
     </body>
 </html>

@@ -1,9 +1,27 @@
 <!doctype html>
 <html>
     <head>
-        <title>@model.title</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title> @model.title</title>
+        <link href= "stylesheets/bootstrap.css" rel="stylesheet" type="text/css">
     </head>
+
     <body>
-        <span class="p">@model.body </span>
+        <div class="container" >
+            <span class="p">@html.block('body') </span>
+            <hr/>
+            <p>
+                <button type="button" class="btn btn-primary">List </button>
+                <button type="button" class="btn btn-primary">Add</button>
+                <button type="button" class="btn btn-primary">Delete</button>
+                <button type="button" class="btn btn-primary">Edit</button>
+
+
+            </p>
+        </div>
+
+        <script src="javascripts/bootstrap.js"></script>
     </body>
 </html>

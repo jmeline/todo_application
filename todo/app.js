@@ -1,14 +1,17 @@
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
+//
+//    My Application
+//
+var express       = require('express');
+var path          = require('path');
+var favicon       = require('serve-favicon');
+var logger        = require('morgan');
+var cookieParser  = require('cookie-parser');
+var bodyParser    = require('body-parser');
 
-var routes = require('./routes/index');
-var users = require('./routes/users');
+var routes        = require('./routes/index');
+var users         = require('./routes/users');
 
-var app = express();
+var app           = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -22,6 +25,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+
+// set port to the environment if provided, else use 3000
+app.set('port', process.env.PORT || 3000);
+
 
 app.use('/', routes);
 app.use('/users', users);

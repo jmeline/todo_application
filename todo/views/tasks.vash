@@ -1,0 +1,18 @@
+@html.extend("./index.vash", function(model){
+    
+    @html.block("tasks", function(model){
+        if (@model.tasks)
+        {
+            <div class="list-group">
+                @model.tasks.forEach(function(item){
+              <a href="#" class="list-group-item">@item</a>  
+                })
+            </div>
+        }
+        else
+        {
+            <h4>Nothing to show here </h4>
+        }
+
+    })
+})

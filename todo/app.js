@@ -1,18 +1,17 @@
 //
 //    My TODO Application
 //
-var express          = require('express');
-var path                = require('path');
-var http                = require('http');
-var favicon           = require('serve-favicon');
-var logger            = require('morgan');
-var cookieParser  = require('cookie-parser');
-var bodyParser    = require('body-parser');
-var routes            = require('./routes/index');
-var users             = require('./routes/users');
-var tasks              = require('./routes/tasks');
+var express      = require('express');
+var path         = require('path');
+var http         = require('http');
+var favicon      = require('serve-favicon');
+var logger       = require('morgan');
+var cookieParser = require('cookie-parser');
+var bodyParser   = require('body-parser');
+var routes       = require('./routes/index');
+var tasks        = require('./routes/tasks');
+var mongoskin    = require('mongoskin');
 
-var mongoskin     = require('mongoskin');
 var db = mongoskin.db('mongodb://localhost:27017/todo?auto_reconnect', {safe:true});
 
 var app = express();
@@ -41,7 +40,7 @@ app.get('/tasks', tasks.list);
 app.post('/tasks', tasks.markAllCompleted)
 app.post('/tasks', tasks.add);
 
-app.use('/users', users);
+// app.use('/users', users);
 
 app.use(function(err, req, res, next) {
   console.error(err.stack);

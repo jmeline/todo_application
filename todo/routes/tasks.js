@@ -2,10 +2,10 @@
 exports.list = function(request, response, next){
   console.log("LIST!");
   request.db.tasks.find({completed: false}).toArray(
-    function(error, tasks){ 
+    function(error, tasks){
       if (error) return next(error);
-      response.render('tasks.vash', {
-        tasks: tasks || [] });
+      response.render('index.vash', {
+        todo: tasks || [] });
     });
 };
 
@@ -18,7 +18,7 @@ exports.add = function(req, res, next){
     if (error) return next(error);
     if (!task) return next(new Error('Failed to save.'));
     console.info('Added %s with id=%s', task.name, task._id);
-    res.redirect('/tasks');
+    res.redirect('/');
   })
 };
 

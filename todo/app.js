@@ -1,6 +1,8 @@
 //
 //    My TODO Application
 //
+
+// require ( './db' );
 var express      = require('express');
 var path         = require('path');
 var http         = require('http');
@@ -8,7 +10,8 @@ var favicon      = require('serve-favicon');
 var logger       = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser   = require('body-parser');
-var routes       = require('./routes/index');
+var routes = require( './routes');
+// var routes       = require('./routes/index');
 var tasks        = require('./routes/tasks');
 var mongoskin    = require('mongoskin');
 
@@ -37,10 +40,10 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Set routes
-app.use('/', routes);
-app.get('/tasks', tasks.list);
-app.post('/tasks', tasks.markAllCompleted)
-app.post('/tasks', tasks.add);
+app.get('/', routes.index);
+app.get('/', tasks.list);
+// app.post('/', tasks.add);
+// app.post('/tasks', tasks.markAllCompleted)
 
 // app.use('/users', users);
 

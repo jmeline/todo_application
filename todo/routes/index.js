@@ -1,10 +1,14 @@
-var express = require('express');
-var router = express.Router();
+// var express = require('express');
+// var router = express.Router();
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index.vash',
-    {title: "Todo App", body: "TODO Application"});
-});
+// router.get('/', function(req, res, next) {
+//   res.render('index.vash',
+//     {title: "Todo App", body: "Todo Application", todo: "None"});
+// });
 
-module.exports = router;
+exports.index = function( request, response){
+    response.render('index.vash', {title: "Todo App", body: "Todo Application", todo: "None"});
+};
+
+// module.exports = router;

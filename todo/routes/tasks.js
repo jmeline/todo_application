@@ -1,13 +1,12 @@
-
 // get a list of tasks from the database
-exports.list = function(req, res, next){
-  req.db.tasks.find({completed: false}).toArray(function(error, tasks){
-    if (error) return next(error);
-    res.render('tasks.vash', {
-      title: 'Todo List',
-      tasks: tasks || []
+exports.list = function(request, response, next){
+  console.log("LIST!");
+  request.db.tasks.find({completed: false}).toArray(
+    function(error, tasks){ 
+      if (error) return next(error);
+      response.render('tasks.vash', {
+        tasks: tasks || [] });
     });
-  });
 };
 
 exports.add = function(req, res, next){

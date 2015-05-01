@@ -3,4 +3,16 @@
     {
         <h2> @model.body</h2>
     })
+
+    @html.block("tasks", function(model){
+        if (@model.tasks)
+        {
+            <div class="list-group">
+                @model.tasks.forEach(function(item){
+              <a href="#" class="list-group-item">@item</a>  
+                })
+            </div>
+        }
+
+    })
 })

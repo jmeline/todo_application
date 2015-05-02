@@ -9,10 +9,10 @@
     <body>
         <div class="container">
             <hr/>
-            <span class="p text-center"> @html.block('body')  </span>
+            <span class="p text-center"> <h2> Todo Application </h2> </span>
             <hr/>
 
-            <p class = 'text-center'>
+            <!-- <p class="text-center">
                 <a href="/tasks" id="list-button" type="button" class="btn btn-primary"> List </a>
 
                 <button id="add-button" type="button" class="btn btn-primary" data-target="#myModal" data-toggle="modal"> Add </button>
@@ -20,33 +20,22 @@
                 <button id="delete-button" type="button" class="btn btn-primary"> Delete </button>
 
                 <button id="edit-button" type="button" class="btn btn-primary"> Edit </button>
-            </p>
-            <p class= 'text-center'>
-                <input class="input-medium" type="text" placeholder=".input-medium">
-                <span class="p"> @html.block('todo')  </span>
-            </p>
+            </p> -->
+            <span class="p text-center">
+                <form action="/add" method="post" accept-charset="utf-8">
+                    <div class="input-group">
+                       <input type="text" class="form-control">
+                       <span class="input-group-btn">
+                          <button class="btn btn-default" type="submit" value="content">
+                             Add
+                          </button>
+                       </span>
+                    </div><!-- /input-group -->
+                </form>
+            </span>
 
+                <span class="p"> @html.block('todo') </span>
         </div>
-
-
-        <!-- Modal -->
-<!--         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-              </div>
-              <div class="modal-body">
-                This is some cool text
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
-              </div>
-            </div>
-          </div>
-        </div> -->
 
         <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
         <script src="/javascripts/default.js" type="text/javascript"></script>

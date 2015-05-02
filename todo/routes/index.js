@@ -9,7 +9,11 @@
 
 exports.index = function( request, response){
     response.render('index.vash', 
-        {title: "Todo App", body: "Todo Application", todo: []});
+        {title: "Todo App"});
 };
+
+exports.add = function( request, response ){
+    response.redirect( '/' );
+}
 
 // module.exports = router;

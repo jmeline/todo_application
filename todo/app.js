@@ -2,7 +2,7 @@
 //    My TODO Application
 //
 
-// require ( './db' );
+require ( './db' );
 var express      = require('express');
 var path         = require('path');
 var http         = require('http');
@@ -13,18 +13,18 @@ var bodyParser   = require('body-parser');
 var routes = require( './routes');
 // var routes       = require('./routes/index');
 var tasks        = require('./routes/tasks');
-var mongoskin    = require('mongoskin');
+// var mongoskin    = require('mongoskin');
 
-var db = mongoskin.db('mongodb://localhost:27017/todo?auto_reconnect', {safe:true});
+// var db = mongoskin.db('mongodb://localhost:27017/todo?auto_reconnect', {safe:true});
 
 var app = express();
 
-app.use(function(req, res, next){
-    // console.log("Connecting to database");
-    req.db = {};
-    req.db.tasks = db.collection('tasks');
-    next();
-})
+// app.use(function(req, res, next){
+//     // console.log("Connecting to database");
+//     req.db = {};
+//     req.db.tasks = db.collection('tasks');
+//     next();
+// })
 
 app.set('port', process.env.PORT || 3000);
 
@@ -41,7 +41,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Set routes
 app.get('/', routes.index);
-app.get('/', tasks.list);
+app.post('/add', routes.add);
 // app.post('/', tasks.add);
 // app.post('/tasks', tasks.markAllCompleted)
 

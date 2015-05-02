@@ -8,7 +8,7 @@
                 <ul class="list-group">
                     @model.todo.forEach(function(item){
                   <li class="list-group-item clearfix">  
-                        @item
+                        @item.content
                     <span class="pull-right">
                         <a href="#">
                             <span class="glyphicon glyphicon-remove-circle" style="color:red">
@@ -18,10 +18,6 @@
                   </li>
                     })
                 </ul>
-            }
-            else
-            {
-                <h2> add a Todo </h2>
             }
         }
 

@@ -21,10 +21,9 @@
                              Add
                           </button>
                        </span>
-                    </div><!-- /input-group -->
+                    </div>
                </form>
             </span>
-
                 <span class="p"> @html.block('todo') </span>
         </div>
 

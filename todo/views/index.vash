@@ -10,7 +10,7 @@
                   <li class="list-group-item clearfix">  
                         @item.content
                     <span class="pull-right">
-                        <a href="#">
+                        <a href="/rm/@item._id">
                             <span class="glyphicon glyphicon-remove-circle" style="color:red">
                             </span>
                         </a>

@@ -11,24 +11,12 @@ var logger       = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser   = require('body-parser');
 var routes = require( './routes');
-// var routes       = require('./routes/index');
 var tasks        = require('./routes/tasks');
-// var mongoskin    = require('mongoskin');
-
-// var db = mongoskin.db('mongodb://localhost:27017/todo?auto_reconnect', {safe:true});
 
 var app = express();
 
-// app.use(function(req, res, next){
-//     // console.log("Connecting to database");
-//     req.db = {};
-//     req.db.tasks = db.collection('tasks');
-//     next();
-// })
-
 app.set('port', process.env.PORT || 3000);
 
-// view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'vash');
 
@@ -42,10 +30,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Set routes
 app.get('/', routes.index);
 app.post('/add', routes.add);
-// app.post('/', tasks.add);
-// app.post('/tasks', tasks.markAllCompleted)
-
-// app.use('/users', users);
+app.get('/rm/:id', routes.rm);
 
 app.use(function(err, req, res, next) {
   console.error(err.stack);

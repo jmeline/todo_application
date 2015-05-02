@@ -8,9 +8,9 @@
                 <ul class="list-group">
                     @model.todo.forEach(function(item){
                   <li class="list-group-item clearfix">  
-                        @item.content
+                    <a href="/edit/@item._id" title="Edit this task"> @item.content</a>
                     <span class="pull-right">
-                        <a href="/rm/@item._id">
+                        <a href="/rm/@item._id" title="Remove this task">
                             <span class="glyphicon glyphicon-remove-circle" style="color:red">
                             </span>
                         </a>

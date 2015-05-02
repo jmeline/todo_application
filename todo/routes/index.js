@@ -14,10 +14,15 @@ exports.add = function( request, response ){
     });
 };
 
-exports.rm = function( request, response){
+exports.rm = function( request, response ){
     Todo.findById( request.params.id, function (error, todo){
         todo.remove( function (error, todo){
             response.redirect( '/' );
         });
     });
 };
+
+exports.edit = function( request, response )
+{
+    // TODO!
+}

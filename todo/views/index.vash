@@ -10,11 +10,18 @@
         if (@model.todo instanceof Array){
             if (@model.todo.length > 0)
             {
-                <div class="list-group">
+                <ul class="list-group">
                     @model.todo.forEach(function(item){
-                  <a href="" class="list-group-item">@item</a>
+                  <li class="list-group-item clearfix">  
+                        @item
+                    <span class="pull-right">
+                        <a href="#">
+                            <span class="glyphicon glyphicon-remove-circle"></span>
+                        </a>
+                    </span>
+                  </li>
                     })
-                </div>
+                </ul>
             }
             else
             {
@@ -23,7 +30,7 @@
         }
         else
         {
-            <h2> add a TODO! </h2>
+            <h2> add a TO DO! </h2>
         }
 
     })

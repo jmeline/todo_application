@@ -8,7 +8,8 @@
 // });
 
 exports.index = function( request, response){
-    response.render('index.vash', {title: "Todo App", body: "Todo Application", todo: "None"});
+    response.render('index.vash', 
+        {title: "Todo App", body: "Todo Application", todo: []});
 };
 
 // module.exports = router;

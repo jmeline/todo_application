@@ -31,6 +31,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', routes.index);
 app.post('/add', routes.add);
 app.get('/rm/:id', routes.rm);
+app.get('/edit/:id', routes.edit);
+app.post('/update/:id', routes.update);
 
 app.use(function(err, req, res, next) {
   console.error(err.stack);

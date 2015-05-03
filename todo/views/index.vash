@@ -1,12 +1,9 @@
 @html.extend("./template.vash", function(model){
-
     @html.block("todo", function(model){
-
         if (@model.todo instanceof Array){
-            if (@model.todo.length > 0)
-            {
-                <ul class="list-group">
-                    @model.todo.forEach(function(item){
+            if (@model.todo.length > 0){
+            <ul class="list-group">
+                @model.todo.forEach(function(item){
                   <li class="list-group-item clearfix">  
                     <a href="/edit/@item._id" title="Edit this task"> @item.content</a>
                     <span class="pull-right">
@@ -16,8 +13,8 @@
                         </a>
                     </span>
                   </li>
-                    })
-                </ul>
+                })
+            </ul>
             }
         }
 

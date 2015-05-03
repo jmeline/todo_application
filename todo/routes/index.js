@@ -9,7 +9,7 @@ exports.index = function( request, response){
 
 exports.add = function( request, response, next ){
     if (request.body.content){
-        var new_object = new Todo({
+        new_object = new Todo({
             content: request.body.content
         })
 

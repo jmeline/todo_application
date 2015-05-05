@@ -1,8 +1,12 @@
 body {
-  padding: 50px;
+    background-color: #70CB5C
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
-  color: #00B7FF;
+  color: #B75CCB;
+}
+
+h2#app {
+    color:#B75CCB;
 }

@@ -2,6 +2,7 @@
     @html.block("todo", function(model){
         if (@model.todo instanceof Array){
             if (@model.todo.length > 0){
+            <h4> Current Tasks </h4>
             <ul class="list-group">
                 @model.todo.forEach(function(item){
                   <li class="list-group-item clearfix">  
